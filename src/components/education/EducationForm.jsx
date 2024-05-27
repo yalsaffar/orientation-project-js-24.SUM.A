@@ -107,6 +107,7 @@ const EducationForm = () => {
                         onChange={handleChange('logo')}
                         />
                     </label>
+                    <button onSubmit={handleSubmit}>Submit Education</button>
                 </form>
             </div>
         </>
