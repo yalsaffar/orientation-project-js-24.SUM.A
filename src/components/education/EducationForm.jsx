@@ -13,23 +13,16 @@ const EducationForm = () => {
     const handleChange = (field) => (e) => {
         e.preventDefault();
 
-        if (field === 'grade') {
-            setFormData({
-                ...formData,
-                [field]: `${e.currentTarget.value}%`
-            })
-        } else {
-            setFormData({
-                ...formData,
-                [field]: e.currentTarget.value
-            })
-        }
+        setFormData({
+            ...formData,
+            [field]: e.currentTarget.value
+        })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('resume/education', {
+        fetch('/api/resume/education', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -96,7 +89,7 @@ const EducationForm = () => {
                         value={formData.grade}
                         placeholder="Grade"
                         onChange={handleChange('grade')}
-                        /> %
+                        />%
                     </label>
                     <label>
                         <h2>Logo URL</h2>
