@@ -1,6 +1,13 @@
 import "./App.css";
+import React, {useState} from "react";
+import EducationForm from "./components/education/EducationForm";
 
 function App() {
+  const [showEducationForm, setShowEducationForm] = useState(false);
+
+  const toggleEducationForm = () => {
+    setShowEducationForm(!showEducationForm);
+  }
   return (
     <div className="App">
       <h1>Resume Builder</h1>
@@ -13,7 +20,8 @@ function App() {
       <div className="resumeSection">
         <h2>Education</h2>
         <p>Education Placeholder</p>
-        <button>Add Education</button>
+        <button onClick={toggleEducationForm}>{showEducationForm ? "Hide" : "Add Education"}</button>
+        {showEducationForm && <EducationForm />}
         <br></br>
       </div>
       <div className="resumeSection">
