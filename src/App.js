@@ -1,6 +1,7 @@
 import "./App.css";
 import React, {useState} from "react";
 import EducationForm from "./components/education/EducationForm";
+import EducationView from "./components/education/EducationView";
 
 function App() {
   const [showEducationForm, setShowEducationForm] = useState(false);
@@ -19,7 +20,7 @@ function App() {
       </div>
       <div className="resumeSection">
         <h2>Education</h2>
-        <p>Education Placeholder</p>
+        <p><EducationView /></p>
         <button onClick={toggleEducationForm}>{showEducationForm ? "Hide" : "Add Education"}</button>
         {showEducationForm && <EducationForm />}
         <br></br>
