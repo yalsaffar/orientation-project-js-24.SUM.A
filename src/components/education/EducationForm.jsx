@@ -65,7 +65,7 @@ const EducationForm = () => {
                         <input
                         type="text"
                         value={formData.school}
-                        placeholder="Month Year"
+                        placeholder="School"
                         onChange={handleChange('school')}
                         />
                     </label>
