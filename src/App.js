@@ -20,7 +20,7 @@ function App() {
       </div>
       <div className="resumeSection">
         <h2>Education</h2>
-        <p><EducationView /></p>
+        <EducationView />
         <button onClick={toggleEducationForm}>{showEducationForm ? "Hide" : "Add Education"}</button>
         {showEducationForm && <EducationForm />}
         <br></br>

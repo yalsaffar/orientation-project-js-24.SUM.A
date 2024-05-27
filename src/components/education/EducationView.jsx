@@ -1,35 +1,36 @@
 import { useState, useEffect } from "react";
+import './EducationView.css'
+import defaultLogo from '../../assets/graduation-cap.png'
 
 const EducationView = () => {
-    const [educationData, setEducationData] = useState({
-        "course": "test",
-        "school": "",
-        "start_date": "",
-        "end_date": "",
-        "grade": "",
-        "logo": ""
-    })
+    const [educationData, setEducationData] = useState([]);
 
     useEffect(() => {
-        fetch("/data").then((res) =>
-            res.json().then((data) => {
-                console.log(data)
-
-                // setEducationData({
-                //     course: data[0].course,
-                //     school: data[0].school,
-                //     start_date: data[0].start_date,
-                //     end_date: data[0].start_date,
-                //     grade: data[0].grade,
-                //     logo: data[0].logo,
-                // });
+        fetch("http://localhost:5000/resume/education")
+            .then((res) => {
+                res.json().then((data) => {
+                setEducationData(data);
             })
-        );
+        });
     }, []);
 
     return (
         <>
-            {educationData.course}
+        {educationData ?
+            educationData.map(education =>
+                <div key={education.id} className="education-item">
+                    <div className="education-item-school">
+                        {education.logo.includes("example") ? <img src={defaultLogo} alt="defaultLogo" className="logo"/> : <img src={education.logo} alt="logo" className="logo"/>}
+                        <h3>{education.school}</h3>
+                    </div>
+                    <div className="education-item-course">
+                        <li>{education.course}</li>
+                        <li>Grade: {education.grade}</li>
+                        <li>{education.start_date} - {education.end_date}</li>
+                    </div>
+                </div>
+                )
+            : ""}
         </>
     )
 };
