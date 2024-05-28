@@ -1,2 +1,3 @@
-// intial commit 
+import React, { useState } from "react";
+import "./AddSkillForm.css";
 
