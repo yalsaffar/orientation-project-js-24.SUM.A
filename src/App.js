@@ -11,7 +11,6 @@ function App() {
 
   const handleFormSubmit = () => {
     setShowAddSkillForm(false);
-    // You can add more logic here if needed after form submission
   };
 
   return (
