@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./UserInfo.css";
+import "./UserInfo.css"; 
 
 function UserInfo() {
   const [userInfo, setUserInfo] = useState({
@@ -17,7 +17,7 @@ function UserInfo() {
   };
 
   return (
-    <div className="userInfoSection">
+    <div className="userInfoSection resumeSection">
       <h2>User Information</h2>
       <form>
         <div>
