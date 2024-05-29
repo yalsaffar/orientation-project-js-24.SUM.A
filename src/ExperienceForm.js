@@ -1,4 +1,3 @@
-// src/ExperienceForm.js
 import React, { useState } from 'react';
 import './ExperienceForm.css';
 
@@ -32,10 +31,20 @@ function ExperienceForm() {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
-        // Handle success - maybe clear the form or show a success message
+        alert('Experience added successfully!');
+        // Optionally clear the form here
+        setFormData({
+          title: '',
+          company: '',
+          start_date: '',
+          end_date: '',
+          description: '',
+          logo: ''
+        });
       })
       .catch((error) => {
         console.error('Error:', error);
+        alert('Error adding experience.');
       });
   };
 
