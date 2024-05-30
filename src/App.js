@@ -1,9 +1,20 @@
-import React, { useState } from "react";
-import "./App.css";
-import ExperienceForm from "./ExperienceForm";
+import React, { useState } from 'react';
+import './App.css';
+import AddSkillForm from './AddSkillForm';
+import UserInfo from './UserInfo'; 
+import ExperienceForm from './ExperienceForm';
 
 function App() {
+  const [showAddSkillForm, setShowAddSkillForm] = useState(false);
   const [showExperienceForm, setShowExperienceForm] = useState(false);
+
+  const handleAddSkillClick = () => {
+    setShowAddSkillForm(!showAddSkillForm);
+  };
+
+  const handleFormSubmit = () => {
+    setShowAddSkillForm(false);
+  };
 
   const toggleExperienceForm = () => {
     setShowExperienceForm(!showExperienceForm);
@@ -30,18 +41,19 @@ function App() {
         <h2>Education</h2>
         <p>Education Placeholder</p>
         <button>Add Education</button>
-        <br></br>
+        <br />
       </div>
 
       {/* Skills Section */}
       <div className="resumeSection">
         <h2>Skills</h2>
         <p>Skill Placeholder</p>
-        <button>Add Skill</button>
-        <br></br>
+        <button onClick={handleAddSkillClick}>Add Skill</button>
+        <br />
+        {showAddSkillForm && <AddSkillForm onSubmit={handleFormSubmit} />}
       </div>
 
-      <br></br>
+      <br />
       <button>Export</button>
     </div>
   );
