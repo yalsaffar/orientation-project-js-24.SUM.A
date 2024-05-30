@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import UserInfo from "./UserInfo";
+import ExperienceForm from "./ExperienceForm";
 
 function App() {
+  const [showExperienceForm, setShowExperienceForm] = useState(false);
+
+  const toggleExperienceForm = () => {
+    setShowExperienceForm(!showExperienceForm);
+  };
+
   return (
     <div className="App">
       <h1>Resume Builder</h1>
@@ -13,9 +19,10 @@ function App() {
       {/* Experience Section */}
       <div className="resumeSection">
         <h2>Experience</h2>
-        <p>Experience Placeholder</p>
-        <button>Add Experience</button>
-        <br></br>
+        <button onClick={toggleExperienceForm}>
+          {showExperienceForm ? "Hide Experience Form" : "Add Experience"}
+        </button>
+        {showExperienceForm && <ExperienceForm />}
       </div>
 
       {/* Education Section */}
