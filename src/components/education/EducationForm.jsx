@@ -29,7 +29,7 @@ const EducationForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('resume/education', {
+        fetch('http://localhost:5000/resume/education', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,13 +38,11 @@ const EducationForm = () => {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Success:', data)
+            alert("Education successfully added!")
         })
         .catch((error) => {
-            console.log("Error:", error)
+            alert("Error: Education not added :(")
         })
-        //TO-DO: Add error handling for incorrect values (e.g. grade > 100)
-        //TO-DO: Add submission success modal
     }
 
     return (
@@ -65,7 +63,7 @@ const EducationForm = () => {
                         <input
                         type="text"
                         value={formData.school}
-                        placeholder="Month Year"
+                        placeholder="School"
                         onChange={handleChange('school')}
                         />
                     </label>
@@ -107,6 +105,7 @@ const EducationForm = () => {
                         onChange={handleChange('logo')}
                         />
                     </label>
+
                     <button onSubmit={handleSubmit}>Submit Education</button>
                 </form>
             </div>
