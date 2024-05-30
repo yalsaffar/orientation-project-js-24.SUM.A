@@ -29,6 +29,7 @@ button {
   background-color: rgb(228, 165, 42);
   color: white;
   cursor: pointer;
+  margin-bottom: 1.25rem;
 }
 
 button:hover {
@@ -40,6 +41,7 @@ form {
   flex-direction: column;
   max-width: 37.5rem;
   align-items: center;
+  text-align: center;
   margin: 0 auto;
 }
 
@@ -78,11 +80,12 @@ input, textarea {
 }
 
 .modal-content {
+  border-radius: 0.5rem;
   background-color: #fefefe;
   margin: 5rem auto;
   padding: 1.25rem;
-  border: 0.25rem solid #888;
-  width: 50%;
+  border: 0.25rem solid rgb(228, 165, 42);
+  width: 30%;
 }
 
 .close {

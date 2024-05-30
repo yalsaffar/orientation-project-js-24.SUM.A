@@ -1,4 +1,5 @@
 import { useState } from "react";
+import defaultLogo from '../../assets/graduation-cap.png'
 
 const EducationEdit = ({education, showEdit, setShowEdit}) => {
     const [formData, setFormData] = useState (education)
@@ -44,6 +45,7 @@ const EducationEdit = ({education, showEdit, setShowEdit}) => {
                 <span class="close" onClick={handleEditClick}>&times;</span>
                 <div className="education-form-container">
                     <form onSubmit={handleSubmit}>
+                        <h1 className="education-item-school"><img src={defaultLogo} alt="defaultLogo" className="logo"/>Edit Education</h1>
                         <label>
                             <h2>Course</h2>
                             <input
