@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import EducationEdit from "./EducationEdit";
 import defaultLogo from '../../assets/graduation-cap.png'
 import editIcon from '../../assets/edit.png'
-import closeIcon from '../../assets/close.png'
 import './EducationView.css'
 
 const EducationView = () => {
     const [educationData, setEducationData] = useState([]);
-    const [showEdit, setShowEdit] = useState([false, 0]);
+    const [showEdit, setShowEdit] = useState([false, null]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/resume/education")
+        fetch("/resume/education")
             .then((res) => {
                 res.json().then((data) => {
                 setEducationData(data);
@@ -34,17 +33,9 @@ const EducationView = () => {
                                 <h3>{education.school}</h3>
                             </div>
                             <button className="icon-button" onClick={handleEditClick(education.id)}>
-                                {!showEdit[0] && showEdit[1] ?
                                     <img src={editIcon}
                                     alt="editIcon"
-                                    className="icon"
-                                    />
-                                    :
-                                    <img src={closeIcon}
-                                    alt="closeIcon"
-                                    className="icon"
-                                    />
-                                }
+                                    className="icon"/>
                             </button>
                         </div>
                         <div className="education-item-course">
