@@ -1,6 +1,7 @@
 import "./App.css";
 import React, {useState} from "react";
 import EducationForm from "./components/education/EducationForm";
+import EducationView from "./components/education/EducationView";
 import UserInfo from "./UserInfo";
 
 function App() {
