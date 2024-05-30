@@ -9,7 +9,7 @@ const EducationView = () => {
     const [showEdit, setShowEdit] = useState([false, null]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/resume/education")
+        fetch("/resume/education")
             .then((res) => {
                 res.json().then((data) => {
                 setEducationData(data);
