@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import AddSkillForm from './AddSkillForm';
-import UserInfo from './UserInfo'; // Ensure this import is correct and the file exists
+import UserInfo from './UserInfo'; 
+import ExperienceForm from './ExperienceForm';
 
 function App() {
   const [showAddSkillForm, setShowAddSkillForm] = useState(false);
+  const [showExperienceForm, setShowExperienceForm] = useState(false);
 
   const handleAddSkillClick = () => {
     setShowAddSkillForm(!showAddSkillForm);
@@ -12,6 +14,10 @@ function App() {
 
   const handleFormSubmit = () => {
     setShowAddSkillForm(false);
+  };
+
+  const toggleExperienceForm = () => {
+    setShowExperienceForm(!showExperienceForm);
   };
 
   return (
@@ -24,9 +30,10 @@ function App() {
       {/* Experience Section */}
       <div className="resumeSection">
         <h2>Experience</h2>
-        <p>Experience Placeholder</p>
-        <button>Add Experience</button>
-        <br />
+        <button onClick={toggleExperienceForm}>
+          {showExperienceForm ? "Hide Experience Form" : "Add Experience"}
+        </button>
+        {showExperienceForm && <ExperienceForm />}
       </div>
 
       {/* Education Section */}
