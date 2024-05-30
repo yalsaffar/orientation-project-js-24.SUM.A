@@ -10,6 +10,7 @@ function App() {
   const toggleEducationForm = () => {
     setShowEducationForm(!showEducationForm);
   }
+  
   return (
     <div className="App">
       <h1>Resume Builder</h1>
@@ -20,9 +21,10 @@ function App() {
       {/* Experience Section */}
       <div className="resumeSection">
         <h2>Experience</h2>
-        <p>Experience Placeholder</p>
-        <button>Add Experience</button>
-        <br></br>
+        <button onClick={toggleExperienceForm}>
+          {showExperienceForm ? "Hide Experience Form" : "Add Experience"}
+        </button>
+        {showExperienceForm && <ExperienceForm />}
       </div>
 
       {/* Education Section */}
