@@ -29,7 +29,7 @@ const EducationForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:5000/resume/education', {
+        fetch('/resume/education', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
