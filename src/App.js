@@ -1,16 +1,22 @@
 import "./App.css";
 import React, {useState} from "react";
+import ExperienceForm from './ExperienceForm'
 import EducationForm from "./components/education/EducationForm";
 import EducationView from "./components/education/EducationView";
 import UserInfo from "./UserInfo";
 
 function App() {
+  const [showExperienceForm, setShowExperienceForm] = useState(false);
   const [showEducationForm, setShowEducationForm] = useState(false);
+
+  const toggleExperienceForm = () => {
+    setShowEducationForm(!showEducationForm);
+  }
 
   const toggleEducationForm = () => {
     setShowEducationForm(!showEducationForm);
   }
-  
+
   return (
     <div className="App">
       <h1>Resume Builder</h1>
