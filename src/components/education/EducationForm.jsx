@@ -31,9 +31,11 @@ const EducationForm = () => {
         })
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             alert("Education successfully added!")
         })
         .catch((error) => {
+            console.log(error);
             alert("Error: Education not added :(")
         })
     }
@@ -109,3 +111,4 @@ const EducationForm = () => {
 };
 
 export default EducationForm;
+
