@@ -88,6 +88,7 @@ const EducationForm = () => {
                         placeholder="Grade"
                         onChange={handleChange('grade')}
                         />%
+
                     </label>
                     <label>
                         <h2>Logo URL</h2>

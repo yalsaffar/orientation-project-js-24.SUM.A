@@ -11,6 +11,9 @@ function App() {
   const [showExperienceForm, setShowExperienceForm] = useState(false);
   const [showEducationForm, setShowEducationForm] = useState(false);
 
+  const toggleEducationForm = () => {
+    setShowEducationForm(!showEducationForm);
+  }
   const handleAddSkillClick = () => {
     setShowAddSkillForm(!showAddSkillForm);
   };
@@ -49,7 +52,7 @@ function App() {
         <EducationView />
         <button onClick={toggleEducationForm}>{showEducationForm ? "Hide" : "Add Education"}</button>
         {showEducationForm && <EducationForm />}
-        <br/>
+        <br />
       </div>
 
       {/* Skills Section */}
