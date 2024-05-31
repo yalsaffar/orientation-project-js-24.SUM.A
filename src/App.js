@@ -20,7 +20,7 @@ function App() {
   };
 
   const toggleExperienceForm = () => {
-    setShowEducationForm(!showEducationForm);
+    setShowExperienceForm(!showEducationForm);
   }
 
   const toggleEducationForm = () => {
