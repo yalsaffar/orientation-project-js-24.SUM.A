@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
 import AddSkillForm from './AddSkillForm';
-import UserInfo from './UserInfo'; 
+import UserInfo from './UserInfo';
 import ExperienceForm from './ExperienceForm';
+import EducationForm from "./components/education/EducationForm";
 
 function App() {
   const [showAddSkillForm, setShowAddSkillForm] = useState(false);
   const [showExperienceForm, setShowExperienceForm] = useState(false);
+  const [showEducationForm, setShowEducationForm] = useState(false);
 
+  const toggleEducationForm = () => {
+    setShowEducationForm(!showEducationForm);
+  }
   const handleAddSkillClick = () => {
     setShowAddSkillForm(!showAddSkillForm);
   };
@@ -40,7 +45,8 @@ function App() {
       <div className="resumeSection">
         <h2>Education</h2>
         <p>Education Placeholder</p>
-        <button>Add Education</button>
+        <button onClick={toggleEducationForm}>{showEducationForm ? "Hide" : "Add Education"}</button>
+        {showEducationForm && <EducationForm />}
         <br />
       </div>
 
