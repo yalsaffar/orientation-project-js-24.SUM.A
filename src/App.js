@@ -4,7 +4,6 @@ import EducationForm from "./components/education/EducationForm";
 import EducationView from "./components/education/EducationView";
 import UserInfo from "./UserInfo";
 import AddSkillForm from './AddSkillForm';
-import UserInfo from './UserInfo'; 
 import ExperienceForm from './ExperienceForm';
 
 function App() {
@@ -27,7 +26,7 @@ function App() {
   const toggleExperienceForm = () => {
     setShowExperienceForm(!showExperienceForm);
   };
-  
+
   return (
     <div className="App">
       <h1>Resume Builder</h1>
