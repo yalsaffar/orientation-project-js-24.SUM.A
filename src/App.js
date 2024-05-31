@@ -1,13 +1,23 @@
 import "./App.css";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import ExperienceForm from './ExperienceForm'
 import EducationForm from "./components/education/EducationForm";
 import EducationView from "./components/education/EducationView";
 import UserInfo from "./UserInfo";
+import AddSkillForm from './AddSkillForm';
 
 function App() {
+  const [showAddSkillForm, setShowAddSkillForm] = useState(false);
   const [showExperienceForm, setShowExperienceForm] = useState(false);
   const [showEducationForm, setShowEducationForm] = useState(false);
+
+  const handleAddSkillClick = () => {
+    setShowAddSkillForm(!showAddSkillForm);
+  };
+
+  const handleFormSubmit = () => {
+    setShowAddSkillForm(false);
+  };
 
   const toggleExperienceForm = () => {
     setShowEducationForm(!showEducationForm);
@@ -39,18 +49,19 @@ function App() {
         <EducationView />
         <button onClick={toggleEducationForm}>{showEducationForm ? "Hide" : "Add Education"}</button>
         {showEducationForm && <EducationForm />}
-        <br></br>
+        <br/>
       </div>
 
       {/* Skills Section */}
       <div className="resumeSection">
         <h2>Skills</h2>
         <p>Skill Placeholder</p>
-        <button>Add Skill</button>
-        <br></br>
+        <button onClick={handleAddSkillClick}>Add Skill</button>
+        <br />
+        {showAddSkillForm && <AddSkillForm onSubmit={handleFormSubmit} />}
       </div>
 
-      <br></br>
+      <br />
       <button>Export</button>
     </div>
   );
