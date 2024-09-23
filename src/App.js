@@ -26,9 +26,7 @@ function App() {
     setShowExperienceForm(!showEducationForm);
   }
 
-  const toggleEducationForm = () => {
-    setShowEducationForm(!showEducationForm);
-  }
+  
 
   return (
     <div className="App">
